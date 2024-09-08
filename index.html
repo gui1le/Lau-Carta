@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una sorpresa para ti</title>
     <link rel="stylesheet" href="index.css">
+    <script>
+window.onscroll = function() {
+    var navbar = document.querySelector('.navbar');
+    if (window.pageYOffset > 0) {
+        navbar.classList.add('visible');
+    } else {
+        navbar.classList.remove('visible');
+    }
+};
+</script>
 </head>
 <body>
-    <header>
-        <h1>Hola, mi niña ❤️</h1>
-    </header>
-
+    <nav class="blur-nav">
+        <a href="index.html" >Inicio ❤️</a>
+        <a href="conocenos.html">Recuerdos 🩷</a>
+        <a href="planeacion.html">Cartas 🤍</a>
+        <a href="servicios.html">Canciones 💕</a>
+        
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
     <main>
         <section id="mensaje">
             <p>Esta página está hecha solo para ti. Aquí tienes algunas cositas que quiero compartir contigo.</p>
