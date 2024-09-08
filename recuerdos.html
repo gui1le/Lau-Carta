@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una sorpresa para ti</title>
+    <link rel="stylesheet" href="recuerdos.css">
+    <script>
+window.onscroll = function() {
+    var navbar = document.querySelector('.navbar');
+    if (window.pageYOffset > 0) {
+        navbar.classList.add('visible');
+    } else {
+        navbar.classList.remove('visible');
+    }
+};
+</script>
+</head>
+<body>
+    <nav class="blur-nav">
+        <a href="index.html" >Inicio ❤️</a>
+        <a href="recuerdos.html">Recuerdos 🩷</a>
+        <a href="cartas.html">Cartas 🤍</a>
+        <a href="canciones.html">Canciones 💜</a>
+        
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </nav>
+</body>
+</html>
