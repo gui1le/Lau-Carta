@@ -3,35 +3,66 @@ body {
     margin: 0;
     padding: 0;
     background-color: #000000;
-    display:flex;
+    display: flex;
 }
-            .blur-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.08);
-            padding: 15px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        .blur-nav a {
-            text-decoration: none;
-            color: white;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .blur-nav .active {
-            border-bottom: 2px solid blue;
-        }
-        .nav-icons {
-            display: flex;
-            align-items: center;
-        }
-        .nav-icons i {
-            color: white;
-            margin-left: 15px;
-            font-size: 20px;
-        }
+
+.blur-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.blur-nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+}
+
+.blur-nav a span {
+    display: flex;
+    align-items: center;
+}
+
+.blur-nav .active {
+    border-bottom: 2px solid blue;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons i {
+    color: white;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+@media (min-width: 600px) {
+    .blur-nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-icons {
+        margin-top: 0;
+    }
+}
