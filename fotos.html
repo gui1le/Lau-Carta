@@ -83,10 +83,6 @@
       transition: transform 0.6s;
     }
 
-    .card:hover .card-inner {
-      transform: rotateY(180deg);
-    }
-
     .card-front,
     .card-back {
       position: absolute;
@@ -183,16 +179,19 @@
   <!-- Carrusel -->
   <div class="carousel">
     <div class="carousel-track">
+
       <div class="card">
-        <div class="card-inner">
+        <div class="card-inner" ontouchstart="toggleFlip(this)">
           <div class="card-front" style="background-image: url('img/suchi.jpg');"></div>
           <div class="card-back">
-            <p>Recuerdo que este día no tenía planeado ir a visitarte...</p>
+            <p>Recuerdo que este día no tenía planeado ir a visitarte, o si quiera verte jiji 🤭 pero no nos habíamos puesto de acuerdo
+                sobre a donde ir, entonces decidí ir a sorprenderte, me daba miedo que te dijeran algo tus papás de que llegara de sorpresa
+                pero nimodos, así le gusta a mi niña 🤭</p>
           </div>
         </div>
       </div>
       <div class="card">
-        <div class="card-inner">
+        <div class="card-inner" ontouchstart="toggleFlip(this)">
           <div class="card-front" style="background-image: url('img/suetercito.jpg');"></div>
           <div class="card-back">
             <p>Amo nuestros suetercitos 😋 recuerdo que ese día que los compramos no te sentiste muy bien, pero no iba a dejar que no
@@ -203,7 +202,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-inner">
+        <div class="card-inner" ontouchstart="toggleFlip(this)">
           <div class="card-front" style="background-image: url('img/dormiruwu.jpg');"></div>
           <div class="card-back">
             <p>Me encanta poder compartir las clases contigo 🤭 antes en UM cuando me decías si podías sentarte conmigo y tomar la clase de
@@ -214,7 +213,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-inner">
+        <div class="card-inner" ontouchstart="toggleFlip(this)">
           <div class="card-front" style="background-image: url('img/pista.jpg');"></div>
           <div class="card-back">
             <p style="font-size: small;">Realmente amé esta experiencia 😋 aunque chat la haya decidido por nosotros como en el examen de Gerdoc, siento que ha sido 
@@ -260,6 +259,11 @@
       if (currentPosition > 0) currentPosition = 0;
       if (currentPosition < maxPosition) currentPosition = maxPosition;
       track.style.transform = `translateX(${currentPosition}px)`;
+    }
+
+    function toggleFlip(cardInner) {
+      const isFlipped = cardInner.style.transform === 'rotateY(180deg)';
+      cardInner.style.transform = isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)';
     }
   </script>
 </body>
