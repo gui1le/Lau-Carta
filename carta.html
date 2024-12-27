@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .letter-container {
+      background: #fff;
+      width: 90%;
+      max-width: 800px;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      line-height: 1.8;
+      color: #333;
+      overflow-y: auto;
+      max-height: 80vh; /* Hace que sea scrollable si hay mucho texto */
+      margin-bottom: 20px; /* Espaciado entre la carta y el botón */
+    }
+
+    .letter-header,
+    .letter-footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .letter-header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #4b0082;
+    }
+
+    .letter-body {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .letter-footer p {
+      font-style: italic;
+      color: #666;
+    }
+
+    .back-button {
+      background-color: #4b0082;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .back-button:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Controles personalizados de audio */
+    .custom-audio-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .custom-button {
+      background: linear-gradient(135deg, #6a0dad, #4b0082);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 8px 15px rgba(75, 0, 130, 0.6);
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .custom-button:hover {
+      background: linear-gradient(135deg, #8a2be2, #6a0dad);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <audio id="audio" src="sound/sunflower.mp3"></audio>
+  <div class="letter-container">
+    <div class="letter-header">
+      <h1>Para mi niña hermosa</h1>
+      <p>27 de Diciembre de 2024</p>
+      <!-- Controles personalizados de audio -->
+      <div class="custom-audio-controls">
+        <button class="custom-button" onclick="playAudio()">Play</button>
+        <button class="custom-button" onclick="pauseAudio()">Pause</button>
+        <button class="custom-button" onclick="stopAudio()">Stop</button>
+      </div>
+    </div>
+    <div class="letter-body">
+      <p>
+        Nuevamente llega un 27, hace no mucho recordaba estas épocas hace un año, mis manos heladas que tocaban tu rostro hacían soltar una pequeña risa de tu boca, mi mente se abrumaba por la escuela, con física para variar, me resultaba difícil ir a la escuela, levantarme temprano para dar un pequeño repaso, pero como todos los días había algo que me impulsaba a salir adelante, el deseo de verte siempre fue una constante para mí, y en estos días que paso lejos de ti me hacen buscar desesperadamente tus brazos, esos que hacen que toda la gente se desvanezca y los que me dan fuerzas para seguir adelante, los conoces bien porque no oculto la idea de lo necesarios que son para mí, ya sean cálidos bajo el sol de la mañana o fríos después de bañarnos juntos, llenan mi alma y me nutren de amor, ese amor que me hace buscar por los rincones de mi cabeza una idea creativa para sorprenderte, una salida innovadora para recordar con ternura, tantas cosas que hemos vivido, solo me hacen pensar que es contigo, quiero aprender y crecer contigo, quiero que juntos superemos cada piedra que nos arroje la vida, porque siempre habrá momentos difíciles, pero me has enseñado a confiar en que siempre estarás ahí para mí y que nuestro amor supera cada distancia, cada barrera y pelea. No deseo nada más que estar a tu lado, y estoy agradecido de poder decir te amo ❤
+      </p>
+      <p>
+        Con todo mi cariño y amor,<br>
+        Para el amor de mi vida
+      </p>
+    </div>
+    <div class="letter-footer">
+      <p>Besito muaaaah 😋💕</p>
+    </div>
+  </div>
+  <button class="back-button" onclick="history.back()">Regresar</button>
+
+  <script>
+    const audio = document.getElementById('audio');
+
+    function playAudio() {
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
