@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotitos :3</title>
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4b0082, #000);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Contenedor del carrusel */
+    .carousel {
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Pista del carrusel */
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    /* Tarjeta principal */
+    .card {
+      min-width: 200px;
+      height: 300px;
+      margin: 0 10px; /* Espaciado entre tarjetas */
+      perspective: 1000px; /* Necesario para el efecto de giro */
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0);
+    }
+
+    .card-front {
+      background-size: cover;
+      background-position: center;
+      border: 2px solid #4b0082;
+    }
+
+    .card-back {
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid #4b0082;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .card-back h3 {
+      font-size: 20px;
+      color: #a020f0;
+    }
+
+    .card-back p {
+      font-size: 16px;
+      color: #d8bfd8;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Controles del carrusel */
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .carousel-button {
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-button:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Botón de regresar */
+    .back-button {
+      margin-top: 30px;
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-button:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Botón oculto para reproducir audio */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio -->
+  <audio src="sound/roi.mp3" autoplay loop></audio>
+
+  <!-- Título -->
+  <h1>Carrusel de Fotos</h1>
+
+  <!-- Carrusel -->
+  <div class="carousel">
+    <!-- Pista con las tarjetas -->
+    <div class="carousel-track">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('img/suchi.jpg');"></div>
+          <div class="card-back">
+            <p>Recuerdo que este día no tenía planeado ir a visitarte, o si quiera verte jiji 🤭 pero no nos habíamos puesto de acuerdo
+                sobre a donde ir, entonces decidí ir a sorprenderte, me daba miedo que te dijeran algo tus papás de que llegara de sorpresa
+                pero nimodos, así le gusta a mi niña 🤭
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('img/suetercito.jpg');"></div>
+          <div class="card-back">
+            <p>Amo nuestros suetercitos 😋 recuerdo que ese día que los compramos no te sentiste muy bien, pero no iba a dejar que no
+                vivieramos eso, entonces regresé y mi corazón dió un super suspiro al encontrar uno igual, amé usarlos contigo y también ver la
+                peli con nuestros gorritos de navidad 🤭
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('img/dormiruwu.jpg');"></div>
+          <div class="card-back">
+            <p>Me encanta poder compartir las clases contigo 🤭 antes en UM cuando me decías si podías sentarte conmigo y tomar la clase de
+                química contigo, hacía que mis ojitos brillaran jiji, y las clases que pasamos juntos de orientación igual me gustaron mucho
+                y me puse de super dramas cuando la maestra no sabía quien era 🤭
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('img/pista.jpg');"></div>
+          <div class="card-back">
+            <p>Realmente amé esta experiencia 😋 aunque chat la haya decidido por nosotros como en el examen de Gerdoc, siento que ha sido 
+                una de mis citas favoritas, el estar contigo en ese ambiente y en esta epoca, siento que vivimos toda la experiencia de diciembre
+                me encantó poder compartir estos momentos contigo, te amo mi niña hermosa ❤
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controles debajo -->
+    <div class="carousel-controls">
+      <button class="carousel-button left" onclick="moveCarousel(200)">&#9664;</button>
+      <button class="carousel-button right" onclick="moveCarousel(-200)">&#9654;</button>
+    </div>
+  </div>
+
+  <!-- Botón de regresar -->
+  <button class="back-button" onclick="history.back()">Regresar</button>
+
+  <script>
+    // Variables
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.card');
+    const cardWidth = cards[0].offsetWidth + 20; // Ancho de una tarjeta más el margen
+    let currentPosition = 0;
+
+    // Función para mover el carrusel
+    function moveCarousel(pixels) {
+      // Calcula la nueva posición
+      currentPosition += pixels;
+
+      // Limita el movimiento al rango permitido
+      const maxPosition = -(cardWidth * (cards.length - 1));
+      if (currentPosition > 0) currentPosition = 0; // No permite ir más a la izquierda
+      if (currentPosition < maxPosition) currentPosition = maxPosition; // No permite ir más a la derecha
+
+      // Mueve la pista
+      track.style.transform = `translateX(${currentPosition}px)`;
+    }
+  </script>
+</body>
+</html>

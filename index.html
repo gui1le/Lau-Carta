@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Capibara ❤</title>
+  <style>
+    /* Fondo del body */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #4b0082, #000);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Título */
+    h1 {
+      margin: 20px 0;
+      color: #fff;
+      font-size: 28px;
+      text-align: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Contenedor general */
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Espaciado entre cuadros */
+      width: 90%; /* Ajusta al ancho del dispositivo */
+      max-width: 500px; /* Limita el ancho en pantallas más grandes */
+      height: 750px;
+      padding: 20px;
+    }
+
+    /* Estilo de los cuadros */
+    .box {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      width: 100%; /* Ajusta al ancho del contenedor */
+      height: 150px; /* Altura fija */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(75, 0, 130, 0.6);
+      border: 2px solid #4b0082;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 20px rgba(75, 0, 130, 0.8);
+    }
+
+    /* Texto dentro de los cuadros */
+    .box h3 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* Botones */
+    .box button {
+      background: linear-gradient(135deg, #6a0dad, #4b0082);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .box button:hover {
+      background: linear-gradient(135deg, #8a2be2, #6a0dad);
+      transform: scale(1.1);
+    }
+
+    /* Media query para Samsung Galaxy S23 */
+    @media (max-width: 1080px) and (max-height: 2340px) {
+      body {
+        background: linear-gradient(135deg, #6a0dad, #000);
+      }
+      
+      h1 {
+        font-size: 30px;
+      }
+
+      .box {
+        height: 180px; /* Aumenta ligeramente la altura en este dispositivo */
+      }
+
+      .box h3 {
+        font-size: 20px; /* Texto más grande en S23 */
+      }
+
+      .box button {
+        font-size: 16px;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <audio src="sound/cuco.mp3" autoplay></audio>
+  <h1>❤ Para Lau ❤</h1>
+  <div class="container">
+    <div class="box" style="background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDh4dG8yZzFraTM4d3Z1cDB0eGVwN2xxdjlyOGFkYzh2MW4yaDZzcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHLxpSbN0ytehcQ/giphy.gif'); background-size: cover;">
+      <h3>Florecitas</h3>
+      <button onclick="location.href='flower.html'">Ir</button>
+    </div>
+    <div class="box" style="background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWh0NnplaTByb3UydDM1MHRrOGl3bnd1dmV5ZGk4YTNjaGc2ZjdqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gG6xmgCgm4BadaD45x/giphy.gif'); background-size: cover;">
+      <h3>Cartita</h3>
+      <button onclick="location.href='carta.html'">Ir</button>
+    </div>
+    <div class="box" style="background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDZjaG1uNTJpeDBmbHE5ZGlrbHp2aDRwbXZ6eTRhZW85bDNvdjFwNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UVHCnps6XrLm2vLDHq/giphy.gif'); background-size: cover;">
+      <h3>Fotitos</h3>
+      <button onclick="location.href='fotos.html'">Ir</button>
+    </div>
+  </div>
+</body>
+</html>
